@@ -1,0 +1,19 @@
+services:
+  - name: cps
+    protocol: http
+    host: internal-bitly-cp-clb-108493191.us-west-2.elb.amazonaws.com
+    port: 3001
+    path: /
+    routes:
+    - name: cps
+      paths:
+      - /cps
+  - name: lrs
+    protocol: http
+    host: internal-bitly-lr-clb-672441337.us-west-2.elb.amazonaws.com
+    port: 3002
+    path: /
+    routes:
+    - name: lrs
+      paths:
+      - /lrs

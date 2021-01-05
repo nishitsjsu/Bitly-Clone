@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "53fbac7f-e2ee-479b-a4b4-01d82d419a7d",
+		"name": "Bitly Clone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ping Test",
+			"item": [
+				{
+					"name": "Link Redirect Ping Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://bitly-kong-clb-537160208.us-west-2.elb.amazonaws.com:8000/lrs/ping",
+							"protocol": "http",
+							"host": [
+								"bitly-kong-clb-537160208",
+								"us-west-2",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"port": "8000",
+							"path": [
+								"lrs",
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Control Panel Ping Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://bitly-kong-clb-537160208.us-west-2.elb.amazonaws.com:8000/cps/ping",
+							"protocol": "http",
+							"host": [
+								"bitly-kong-clb-537160208",
+								"us-west-2",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"port": "8000",
+							"path": [
+								"cps",
+								"ping"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Create a Short Link",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uri\":\"https://www.awwwards.com/sites/mellowstudio-tv\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://bitly-kong-clb-537160208.us-west-2.elb.amazonaws.com:8000/cps/createlink",
+					"protocol": "http",
+					"host": [
+						"bitly-kong-clb-537160208",
+						"us-west-2",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "8000",
+					"path": [
+						"cps",
+						"createlink"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all trends",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://bitly-kong-clb-537160208.us-west-2.elb.amazonaws.com:8000/lrs/all/trends",
+					"protocol": "http",
+					"host": [
+						"bitly-kong-clb-537160208",
+						"us-west-2",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "8000",
+					"path": [
+						"lrs",
+						"all",
+						"trends"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Link Redirect",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://bitly-kong-clb-537160208.us-west-2.elb.amazonaws.com:8000/lrs/488f9",
+					"protocol": "http",
+					"host": [
+						"bitly-kong-clb-537160208",
+						"us-west-2",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "8000",
+					"path": [
+						"lrs",
+						"488f9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Link Trends",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://bitly-kong-clb-537160208.us-west-2.elb.amazonaws.com:8000/lrs/trends/488f9",
+					"protocol": "http",
+					"host": [
+						"bitly-kong-clb-537160208",
+						"us-west-2",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "8000",
+					"path": [
+						"lrs",
+						"trends",
+						"488f9"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

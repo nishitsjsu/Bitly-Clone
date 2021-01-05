@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "28dbf296-5bb8-4078-8e1d-14ef6f0b3a4d",
+		"name": "Cloud Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ping Test",
+			"item": [
+				{
+					"name": "Create-link-server ping test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/ping",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Link-redirect-server ping test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/ping",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trend-server ping test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/ping",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NoSQL database ping test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NoSQL Worker ping test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3004/ping",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Create short link",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uri\":\"https://tutorialedge.net/golang/consuming-restful-api-with-go/\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/createlink",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"createlink"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get link from NoSQL database",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/api/6f642",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"6f642"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Redirect the short link",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3002/6f642",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"6f642"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get link trend data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3002/trends/030c2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"trends",
+						"030c2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create document on node 1 of NoSQL cluster",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ebf75cfd-f221-4e42-99b4-c38caff39d02",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Id\": 2,\n    \"ShortLink\": \"Kong API/LRS/e4259\",\n    \"Uri\": \"https://medium.com/@elliotchance/goroutines-and-channels-a-real-ly-simple-server-in-go-93ba49ff7c5c\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9001/api/e4259",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"e4259"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get document from Node1 of NoSQL cluster",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/api/e4259",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"e4259"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all links",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3002/all/trends",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"all",
+						"trends"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
