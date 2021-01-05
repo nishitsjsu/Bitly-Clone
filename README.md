@@ -60,15 +60,7 @@ The backend of my application is developed in `Golang`. I've created `REST APIs`
 
 - **NoSQL Database (Cache)**
   <br>
-  I'm using NoSQL database for the caching purpose. Link redirect server fetches details from the NoSQL database to redirect the user to the original URL. I've used my own implementation of NoSQL database. There are total 5 nodes running for the replication purpose. There is a network ELB running on top to distribute the requests. I used below commands to syncronize the nodes.
-
-  ```
-    curl -X POST http://localhost:8888/node -H 'Content-Type: application/json' -d '{"id":"357f24ca529b", "name": "10.0.5.76", "admin_port": "8888", "api_port": "9000"}'
-    curl -X POST http://localhost:8888/node -H 'Content-Type: application/json' -d '{"id":"c4cfd7a700dc", "name": "10.0.5.252", "admin_port": "8888", "api_port": "9000"}'
-    curl -X POST http://localhost:8888/node -H 'Content-Type: application/json' -d '{"id":"d02111829e14", "name": "10.0.5.179", "admin_port": "8888", "api_port": "9000"}'
-    curl -X POST http://localhost:8888/node -H 'Content-Type: application/json' -d '{"id":"ebf75390c5ec", "name": "10.0.1.51", "admin_port": "8888", "api_port": "9000"}'
-    curl -X POST http://localhost:8888/node -H 'Content-Type: application/json' -d '{"id":"d216ae4e476e", "name": "10.0.1.159", "admin_port": "8888", "api_port": "9000"}'
-  ```
+  I'm using NoSQL database for the caching purpose. Link redirect server fetches details from the NoSQL database to redirect the user to the original URL. I've used my own implementation of NoSQL database. There are total 5 nodes running for the replication purpose. There is a network ELB running on top to distribute the requests.
 
 - **CP Server**
   <br>
@@ -245,7 +237,7 @@ endpoint: /all/trends
 
 ## Project Planning
 
-The Project planning has been maintained in a readme [here](https://github.com/nguyensjsu/cmpe281-nishitsjsu/blob/master/cloud/project%20planning/project-planning.md) .
+The Project planning has been maintained in a readme [here](https://github.com/nishitsjsu/Bitly-Clone/blob/main/project%20planning/project-planning.md) .
 
 ## Try the application
 
