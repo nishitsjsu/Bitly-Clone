@@ -108,7 +108,7 @@ The frontend of my application has been created using ReactJS framework. The dep
 
 - **Heroku**
   <br>
-  My frontend has been deployed on Heroku. I've used heroku container registry service to deploy my docker container on heroku cloud. The steps of deployment are provided [here](https://github.com/nguyensjsu/cmpe281-nishitsjsu/blob/master/cloud/heroku/heroku-deployment.md)
+  My frontend has been deployed on Heroku. I've used heroku container registry service to deploy my docker container on heroku cloud. The steps of deployment are provided [here](https://github.com/nishitsjsu/Bitly-Clone/blob/main/heroku/heroku-deployment.md)
   <br>
   <br>
 
